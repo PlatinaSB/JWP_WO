@@ -1,0 +1,56 @@
+<script lang="ts">
+	import * as NavigationMenu from "$lib/components/ui/navigation-menu/index.js";
+	import { Button } from "$lib/components/ui/button/index.js";
+
+	import SunIcon from "@lucide/svelte/icons/sun";
+	import MoonIcon from "@lucide/svelte/icons/moon";
+
+	import { toggleMode } from "mode-watcher";
+</script>
+
+<nav class="w-full bg-white px-6 py-3 font-[Google_Sans_Code] shadow-sm dark:bg-black">
+	<NavigationMenu.Root class="w-full">
+		<NavigationMenu.List class="flex w-full items-center justify-between">
+			<!-- Left: Logo -->
+			<NavigationMenu.Item>
+				<NavigationMenu.Link href="/" class="text-xl font-bold">
+					JeWePe WO
+				</NavigationMenu.Link>
+			</NavigationMenu.Item>
+
+			<!-- Center: Menu Items -->
+			<div class="flex items-center space-x-6">
+				<NavigationMenu.Item>
+					<NavigationMenu.Link href="/catalogues" class="text-lg font-medium">
+						Katalog
+					</NavigationMenu.Link>
+				</NavigationMenu.Item>
+
+				<NavigationMenu.Item>
+					<NavigationMenu.Link href="/about" class="text-lg font-medium">
+						About Us
+					</NavigationMenu.Link>
+				</NavigationMenu.Item>
+			</div>
+
+			<!-- Right: Login + Dark Mode -->
+			<div class="flex items-center space-x-4">
+				<NavigationMenu.Item>
+					<Button href="/login">Login</Button>
+				</NavigationMenu.Item>
+
+				<NavigationMenu.Item>
+					<Button onclick={toggleMode} variant="outline" size="icon">
+						<SunIcon
+							class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+						/>
+						<MoonIcon
+							class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+						/>
+						<span class="sr-only">Toggle theme</span>
+					</Button>
+				</NavigationMenu.Item>
+			</div>
+		</NavigationMenu.List>
+	</NavigationMenu.Root>
+</nav>
