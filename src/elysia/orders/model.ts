@@ -1,10 +1,10 @@
 import { db } from "./../database";
 import type { Order } from "./../types.database";
 
-export function findAllOrders() {
+export function findAllOrdersByemail(email:string) {
     return db
-        .query("SELECT * FROM orders ORDER BY created_at DESC")
-        .all() as Order[];
+        .query("SELECT * FROM orders WHERE email ? ORDER BY created_at DESC")
+        .get(email) as Order[];
 }
 
 export function insertOrder(order: Omit<Order, "order_id" | "created_at" | "updated_at">) {
@@ -19,20 +19,6 @@ export function insertOrder(order: Omit<Order, "order_id" | "created_at" | "upda
         $phone_number: order.phone_number,
         $wedding_date: order.wedding_date,
         $status: order.status ?? "requested",
-        $user_id: order.user_id,
+        $user_id: order.user_id ?? 0,
     });
-}
-
-export function updateOrderStatus(order_id: number, status: string | null) {
-    return db.query(
-        `UPDATE orders 
-         SET status = ?, updated_at = CURRENT_TIMESTAMP 
-         WHERE order_id = ?`
-    ).run(status, order_id);
-}
-
-export function deleteOrder(order_id: number) {
-    return db
-        .query("DELETE FROM orders WHERE order_id = $order_id")
-        .run({ $order_id: order_id });
 }

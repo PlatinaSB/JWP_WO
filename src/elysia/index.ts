@@ -6,6 +6,7 @@ import { userController } from './user';
 import { catalogueController } from './catalouges';
 import { ordersController } from './orders';
 import { settingController } from './settings';
+import { bearer } from '@elysiajs/bearer';
 
 // index
 export const app = new Elysia()
@@ -19,10 +20,18 @@ export const app = new Elysia()
 	.use(openapi())
 	.use(
 		cors({
-			origin: '*', // or ["http://localhost:5173"] for stricter
-			methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+			origin: [
+				'http://localhost:5173',
+				'localhost:5173',
+				'127.0.0.1:5173',
+				'http://127.0.0.1:5173'
+			], // must match frontend URL
+			methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+			credentials: true,
+			allowedHeaders: ['Content-Type', 'Authorization']
 		})
 	)
+	.use(bearer())
 	.use(userController)
 	.use(catalogueController)
 	.use(ordersController)

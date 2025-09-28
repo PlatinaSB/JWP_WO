@@ -17,7 +17,7 @@ db.run(`
 db.run(`
     CREATE TABLE IF NOT EXISTS catalogue (
         catalogue_id    INTEGER PRIMARY KEY AUTOINCREMENT,
-        image           BLOB NOT NULL DEFAULT '',
+        image           TEXT NOT NULL DEFAULT '',
         package_name    VARCHAR(30) NOT NULL,
         description     TEXT NOT NULL,
         price           INTEGER NOT NULL,

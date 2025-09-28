@@ -1,6 +1,7 @@
 import { Elysia, t } from 'elysia';
-import { getOrdersService, postOrderService, putOrderService, deleteOrderService } from './service';
+import { getOrdersService, postOrderService } from './service';
 import { jwt } from '@elysiajs/jwt';
+import { bearer } from '@elysiajs/bearer';
 
 export const ordersController = new Elysia({ prefix: '/orders' })
 	.use(
@@ -10,11 +11,14 @@ export const ordersController = new Elysia({ prefix: '/orders' })
 			exp: '90d'
 		})
 	)
+	.use(bearer())
 
-	.get('/', ({ jwt, cookie, set }) => getOrdersService(jwt, cookie, set), {
+	.get('/', () => {})
+
+	.get('/:email', ({ params }) => getOrdersService(String(params.email)), {
 		detail: { description: 'Get all orders', tags: ['Orders'] }
 	})
-	.post('/', ({ body, jwt, cookie, set }) => postOrderService(body, jwt, cookie, set), {
+	.post('/', ({ body, set, jwt }) => postOrderService(body, set, jwt, bearer), {
 		body: t.Object({
 			catalogue_id: t.Number(),
 			name: t.String(),
@@ -23,17 +27,4 @@ export const ordersController = new Elysia({ prefix: '/orders' })
 			wedding_date: t.String()
 		}),
 		detail: { description: 'Create order', tags: ['Orders'] }
-	})
-	.put('/', ({ body, jwt, cookie, set }) => putOrderService(body, jwt, cookie, set), {
-		body: t.Object({
-			order_id: t.Number(),
-			status: t.Optional(t.String())
-		}),
-		detail: { description: 'Update order status', tags: ['Orders'] }
-	})
-	.delete('/', ({ body, set }) => deleteOrderService(body, set), {
-		body: t.Object({
-			order_id: t.Number()
-		}),
-		detail: { description: 'Delete order', tags: ['Orders'] }
 	});

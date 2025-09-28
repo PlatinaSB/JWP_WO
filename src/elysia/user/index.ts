@@ -1,5 +1,5 @@
 import { Elysia, t } from 'elysia';
-import { loginService, registerService } from './service';
+import { loginService, registerService, logoutService } from './service';
 import { jwt } from '@elysiajs/jwt';
 
 export const userController = new Elysia({ prefix: '/user' })
@@ -33,4 +33,5 @@ export const userController = new Elysia({ prefix: '/user' })
 			}),
 			detail: { description: 'User registration', tags: ['User'] }
 		}
-	);
+	)
+	.post('/logout', async ({ cookie }) => logoutService(cookie));
