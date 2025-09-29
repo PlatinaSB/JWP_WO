@@ -30,7 +30,7 @@
 			}
 
 			// 👉 redirect after login
-			// window.location.href = '/';
+			window.location.href = '/catalogues';
 		} catch (error: any) {
 			console.error(error);
 			errorMessage = error?.response?.data?.message || 'Login failed';

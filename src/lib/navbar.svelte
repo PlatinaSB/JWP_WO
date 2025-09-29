@@ -6,6 +6,25 @@
 	import MoonIcon from '@lucide/svelte/icons/moon';
 
 	import { toggleMode } from 'mode-watcher';
+	import { onMount } from 'svelte';
+
+	let islogin = false;
+	function handleLogout() {
+		localStorage.removeItem('token'); // remove the token
+		islogin = false; // update your login state
+		// optionally redirect to login page
+		// window.location.href = '/login';
+		location.reload()
+	}
+
+	onMount(() => {
+		islogin = !!localStorage.getItem('token');
+		
+	});
+
+	// $: if (islogin !== !!localStorage.getItem('token')) {
+	// 	location.reload();
+	// }
 </script>
 
 <nav class="w-full px-6 py-3 font-[Google_Sans_Code] shadow-sm">
@@ -33,10 +52,15 @@
 
 			<!-- Right: Login + Dark Mode -->
 			<div class="flex items-center space-x-4">
-				<NavigationMenu.Item>
-					<Button href="/login">Login</Button>
-				</NavigationMenu.Item>
-
+				{#if !islogin}
+					<NavigationMenu.Item>
+						<Button href="/login">Login</Button>
+					</NavigationMenu.Item>
+				{:else}
+					<NavigationMenu.Item>
+						<Button onclick={handleLogout}>Logout</Button>
+					</NavigationMenu.Item>
+				{/if}
 				<NavigationMenu.Item>
 					<Button onclick={toggleMode} variant="outline" size="icon">
 						<SunIcon
