@@ -15,7 +15,9 @@ export function findCatalogueById(id: number) {
 	return db.query('SELECT * FROM catalogue WHERE catalogue_id = ?').get(id);
 }
 export function findPublishedCatalogueById(id: number) {
-	return db.query('SELECT * FROM catalogue WHERE catalogue_id = ? AND status_publish = "Y"').get(id);
+	return db
+		.query('SELECT * FROM catalogue WHERE catalogue_id = ? AND status_publish = "Y"')
+		.get(id);
 }
 
 export function insertCatalogue(

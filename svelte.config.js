@@ -12,10 +12,9 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
-			"@/*": "./path/to/lib/*",
-		  },
-	},
-	
+			'@/*': './path/to/lib/*'
+		}
+	}
 };
 
 export default config;

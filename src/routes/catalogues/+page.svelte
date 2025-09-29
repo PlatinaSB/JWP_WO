@@ -50,14 +50,14 @@
 		selectedCatalogue = catalogue;
 		showDetail = true;
 		// goto(`/catalogues/${catalogue.catalogue_id}`, { replaceState: false });
-        history.pushState({}, '', `/catalogues/${catalogue.catalogue_id}`);
+		history.pushState({}, '', `/catalogues/${catalogue.catalogue_id}`);
 	}
 
 	function closeDetail() {
 		showDetail = false;
 		selectedCatalogue = null;
 		goto('/catalogues', { replaceState: false });
-        history.pushState({}, '', '/catalogues');
+		history.pushState({}, '', '/catalogues');
 	}
 
 	// Load catalogues
@@ -171,7 +171,7 @@
 	});
 </script>
 
-<div class="min-h-screen  px-6 py-8 ">
+<div class="min-h-screen px-6 py-8">
 	<div class="mb-6 flex items-center justify-between">
 		<h1 class="text-3xl font-bold">Catalogue</h1>
 
@@ -245,7 +245,7 @@
 				{/if}
 				<p>{selectedCatalogue.description}</p>
 				<p class="font-bold">Rp. {selectedCatalogue.price.toLocaleString()}</p>
-				<Button onclick={()=>goto(`/catalogues/${selectedCatalogue!.catalogue_id}/order`)}>
+				<Button onclick={() => goto(`/catalogues/${selectedCatalogue!.catalogue_id}/order`)}>
 					Order
 				</Button>
 

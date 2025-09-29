@@ -6,17 +6,15 @@
 	<!-- Centered About Us content -->
 	<div class="flex h-screen w-screen flex-grow items-center justify-center">
 		<div class="max-w-2xl px-6 text-center">
-			<h1 class="mb-4 text-4xl font-bold ">
-				JeWePe Wedding Organizer
-			</h1>
-			<p class="text-lg ">
+			<h1 class="mb-4 text-4xl font-bold">JeWePe Wedding Organizer</h1>
+			<p class="text-lg">
 				World leading Wedding Organizer for combat ship from Azure Lane to Kantai Collection
 			</p>
 		</div>
 	</div>
 
 	<!-- Footer -->
-	<footer class="w-full ">
+	<footer class="w-full">
 		<Card class="mx-auto max-w-4xl shadow-md">
 			<CardHeader>
 				<CardTitle>About This Project</CardTitle>

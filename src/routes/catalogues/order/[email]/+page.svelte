@@ -92,9 +92,9 @@
 	}
 </script>
 
-<div class="min-h-screen px-6 py-8 ">
+<div class="min-h-screen px-6 py-8">
 	<div class="mb-6 flex items-center justify-between">
-		<h1 class="text-3xl font-bold  ">Orders for {email}</h1>
+		<h1 class="text-3xl font-bold">Orders for {email}</h1>
 	</div>
 
 	{#if loading}
@@ -121,8 +121,8 @@
 								/>
 							{/if}
 							<p class="font-semibold">{order.catalogue.package_name}</p>
-							<p class="text-sm truncate">{order.catalogue.description}</p>
-							<p class="font-bold mt-1">Rp. {order.catalogue.price.toLocaleString()}</p>
+							<p class="truncate text-sm">{order.catalogue.description}</p>
+							<p class="mt-1 font-bold">Rp. {order.catalogue.price.toLocaleString()}</p>
 							<Button class="mt-2" onclick={() => openCatalogue(order.catalogue!)}>Details</Button>
 						</CardContent>
 					</Card>

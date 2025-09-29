@@ -27,4 +27,3 @@ export async function postOrderService(body: any, set: any, jwt: any, bearer: an
 
 	return { success: true, message: 'Order created' };
 }
-

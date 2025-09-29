@@ -40,7 +40,7 @@
 	};
 </script>
 
-<div class="flex min-h-screen items-center justify-center  px-4 ">
+<div class="flex min-h-screen items-center justify-center px-4">
 	<Card class="w-full max-w-sm shadow-lg">
 		<CardHeader>
 			<CardTitle class="text-center text-2xl font-bold">Login</CardTitle>

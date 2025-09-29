@@ -7,7 +7,7 @@ import {
 	deleteCatalogue,
 	findAll,
 	findCatalogueById,
-    findPublishedCatalogueById
+	findPublishedCatalogueById
 } from './model';
 
 export async function getCataloguesService(jwt: any, bearer: any) {
