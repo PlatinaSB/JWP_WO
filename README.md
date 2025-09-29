@@ -56,7 +56,7 @@ bun install
 
 ## Development
 
-**don't forget to setup .env by copying .env.example and name i to .env and set it up**
+**don't forget to setup .env by copying .env.example and name it to .env and set it up**
 
 ### run both
 
