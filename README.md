@@ -2,8 +2,10 @@
 
 ## clone this repo
 
+for more uptodate version
+
 ```bash
-git clone //this repo
+git clone https://github.com/PlatinaSB/JWP_WO.git
 ```
 
 ## install node.js and Bun
