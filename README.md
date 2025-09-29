@@ -1,38 +1,81 @@
-# sv
+# how to use
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## clone this repo
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+```bash
+git clone //this repo
 ```
 
-## Developing
+## install node.js and Bun
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### nodejs
 
-```sh
-npm run dev
+Windows 10/11 using [chocolatey](https://chocolatey.org/install)
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```powershell
+choco install nodejs
 ```
 
-## Building
+MacOS
 
-To create a production version of your app:
-
-```sh
-npm run build
+```bash
+brew install node
 ```
 
-You can preview the production build with `npm run preview`.
+Linux apt
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+sudo apt install nodejs
+```
+
+Linux Pacman (ARCH)
+
+```bash
+pacman -S nodejs npm
+```
+
+### bun
+
+Windows
+
+```powershell
+powershell -c "irm bun.sh/install.ps1 | iex"
+```
+
+MacOS/Linux
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+## Install all the node module
+
+```bash
+bun install
+```
+
+## Development
+
+**don't forget to setup .env by copying .env.example and name i to .env and set it up**
+
+### run both
+
+```bash
+bun run dev
+```
+
+### run api server
+
+```bash
+bun run dev:api
+```
+
+### run frontend
+
+```bash
+bun run dev:front
+```
+
+## Build
+
+not yet 🙃
