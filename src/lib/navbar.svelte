@@ -14,12 +14,11 @@
 		islogin = false; // update your login state
 		// optionally redirect to login page
 		// window.location.href = '/login';
-		location.reload()
+		location.reload();
 	}
 
 	onMount(() => {
 		islogin = !!localStorage.getItem('token');
-		
 	});
 
 	// $: if (islogin !== !!localStorage.getItem('token')) {

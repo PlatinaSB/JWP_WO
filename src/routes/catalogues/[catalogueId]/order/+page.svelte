@@ -11,6 +11,7 @@
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
 	import * as Popover from '$lib/components/ui/popover/index.js';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
+	import { goto } from '$app/navigation';
 
 	type Catalogue = {
 		catalogue_id: number;
@@ -87,6 +88,10 @@
 		}
 	}
 
+	async function gotoOrderlist(email: any) {
+		goto(`/catalogues/order/${email}`);
+	}
+
 	onMount(() => {
 		fetchCatalogue(catalogueId);
 	});
@@ -101,7 +106,7 @@
 {/if}
 
 {#if successMessage}
-	<Dialog.Root open={true}>
+	<Dialog.Root open={true} onOpenChange={() => gotoOrderlist(form.email)}>
 		<Dialog.Content>
 			<Dialog.Header>
 				<Dialog.Title>Order Status</Dialog.Title>
