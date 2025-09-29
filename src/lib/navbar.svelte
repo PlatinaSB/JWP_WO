@@ -27,7 +27,7 @@
 				</NavigationMenu.Item>
 
 				<NavigationMenu.Item>
-					<NavigationMenu.Link href="/about" class="text-lg font-medium">
+					<NavigationMenu.Link href="/AboutUS" class="text-lg font-medium">
 						About Us
 					</NavigationMenu.Link>
 				</NavigationMenu.Item>
