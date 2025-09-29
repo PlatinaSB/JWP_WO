@@ -35,7 +35,7 @@
 	};
 </script>
 
-<div class="flex min-h-screen items-center justify-center bg-gray-50 px-4 dark:bg-black">
+<div class="flex min-h-screen items-center justify-center ">
 	<Card class="w-full max-w-sm shadow-lg">
 		<CardHeader>
 			<CardTitle class="text-center text-2xl font-bold">Register</CardTitle>

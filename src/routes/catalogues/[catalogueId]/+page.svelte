@@ -169,7 +169,7 @@
 				class="mb-2 max-h-48 w-full rounded object-contain"
 			/>
 			<p class="mb-2 text-sm text-muted-foreground">{catalogue.description}</p>
-			<p class="font-bold">${catalogue.price.toLocaleString()}</p>
+			<p class="font-bold">Rp. {catalogue.price.toLocaleString()}</p>
 			<Button onclick={()=>goto(`/catalogues/${catalogue!.catalogue_id}/order`)}>
 				Order
 			</Button>

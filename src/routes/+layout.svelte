@@ -10,9 +10,10 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 </svelte:head>
-<ModeWatcher></ModeWatcher>
-<Navbar></Navbar>
-
+<header>
+	<ModeWatcher></ModeWatcher>
+	<Navbar></Navbar>
+</header>
 {@render children?.()}
 
 <style>

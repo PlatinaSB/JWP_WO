@@ -92,9 +92,9 @@
 	}
 </script>
 
-<div class="min-h-screen bg-gray-50 px-6 py-8 dark:bg-black">
+<div class="min-h-screen px-6 py-8 ">
 	<div class="mb-6 flex items-center justify-between">
-		<h1 class="text-3xl font-bold text-gray-900 dark:text-white">Orders for {email}</h1>
+		<h1 class="text-3xl font-bold  ">Orders for {email}</h1>
 	</div>
 
 	{#if loading}
@@ -122,7 +122,7 @@
 							{/if}
 							<p class="font-semibold">{order.catalogue.package_name}</p>
 							<p class="text-sm truncate">{order.catalogue.description}</p>
-							<p class="font-bold mt-1">${order.catalogue.price.toLocaleString()}</p>
+							<p class="font-bold mt-1">Rp. {order.catalogue.price.toLocaleString()}</p>
 							<Button class="mt-2" onclick={() => openCatalogue(order.catalogue!)}>Details</Button>
 						</CardContent>
 					</Card>
@@ -147,7 +147,7 @@
 					/>
 				{/if}
 				<p>{selectedCatalogue.description}</p>
-				<p class="font-bold">${selectedCatalogue.price.toLocaleString()}</p>
+				<p class="font-bold">Rp. {selectedCatalogue.price.toLocaleString()}</p>
 				<p>Status: {selectedCatalogue.status_publish === 'Y' ? 'Published' : 'Draft'}</p>
 
 				<Button class="mt-4" onclick={closeDetail}>Close</Button>

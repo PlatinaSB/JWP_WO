@@ -171,7 +171,7 @@
 	});
 </script>
 
-<div class="min-h-screen bg-gray-50 px-6 py-8 dark:bg-black">
+<div class="min-h-screen  px-6 py-8 ">
 	<div class="mb-6 flex items-center justify-between">
 		<h1 class="text-3xl font-bold">Catalogue</h1>
 
@@ -208,7 +208,7 @@
 							/>
 						{/if}
 						<p>{catalogue.description}</p>
-						<p class="font-bold">${catalogue.price.toLocaleString()}</p>
+						<p class="font-bold">Rp. {catalogue.price.toLocaleString()}</p>
 						<Button onclick={() => openCatalogue(catalogue)}>Details</Button>
 					</CardContent>
 
@@ -244,7 +244,7 @@
 					/>
 				{/if}
 				<p>{selectedCatalogue.description}</p>
-				<p class="font-bold">${selectedCatalogue.price.toLocaleString()}</p>
+				<p class="font-bold">Rp. {selectedCatalogue.price.toLocaleString()}</p>
 				<Button onclick={()=>goto(`/catalogues/${selectedCatalogue!.catalogue_id}/order`)}>
 					Order
 				</Button>

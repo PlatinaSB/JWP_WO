@@ -8,7 +8,7 @@
 	import { toggleMode } from "mode-watcher";
 </script>
 
-<nav class="w-full bg-white px-6 py-3 font-[Google_Sans_Code] shadow-sm dark:bg-black">
+<nav class="w-full  px-6 py-3 font-[Google_Sans_Code] shadow-sm ">
 	<NavigationMenu.Root class="w-full">
 		<NavigationMenu.List class="flex w-full items-center justify-between">
 			<!-- Left: Logo -->

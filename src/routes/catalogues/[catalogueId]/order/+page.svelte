@@ -121,7 +121,7 @@
 		<CardContent>
 			<img src={catalogue.image} alt={catalogue.package_name} class="mb-4 rounded" />
 			<p>{catalogue.description}</p>
-			<p class="mt-2 font-semibold">Price: {catalogue.price}</p>
+			<p class="mt-2 font-semibold">Price: Rp. {catalogue.price}</p>
 
 			<form class="mt-4 space-y-4" on:submit|preventDefault={submitOrder}>
 				<div>

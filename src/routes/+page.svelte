@@ -6,11 +6,8 @@
 
 	<div class="absolute top-0 left-0 h-full w-full bg-black/40"></div>
 
-	<div
-		class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white"
-	>
-		<h1 class="mb-4 text-5xl font-bold">JeWePe Wedding Orginizer
-		</h1>
+	<div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center ">
+		<h1 class="mb-4 text-5xl font-bold">JeWePe Wedding Orginizer</h1>
 		<p class="mb-6 text-lg">World leading Wedding Orginizer for combat ship</p>
 	</div>
 </div>
