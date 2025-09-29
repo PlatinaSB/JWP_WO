@@ -110,7 +110,7 @@
 				</Dialog.Description>
 			</Dialog.Header>
 		</Dialog.Content>
-	</Dialog.Root>F
+	</Dialog.Root>
 {/if}
 
 {#if catalogue}
