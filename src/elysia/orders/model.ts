@@ -3,8 +3,8 @@ import type { Order } from "./../types.database";
 
 export function findAllOrdersByemail(email:string) {
     return db
-        .query("SELECT * FROM orders WHERE email ? ORDER BY created_at DESC")
-        .get(email) as Order[];
+        .query("SELECT * FROM orders WHERE email = ? ORDER BY created_at DESC")
+        .all(email) as Order[];
 }
 
 export function insertOrder(order: Omit<Order, "order_id" | "created_at" | "updated_at">) {

@@ -5,7 +5,6 @@ import { cors } from '@elysiajs/cors';
 import { userController } from './user';
 import { catalogueController } from './catalouges';
 import { ordersController } from './orders';
-import { settingController } from './settings';
 import { bearer } from '@elysiajs/bearer';
 
 // index
@@ -35,7 +34,6 @@ export const app = new Elysia()
 	.use(userController)
 	.use(catalogueController)
 	.use(ordersController)
-	.use(settingController)
 	.listen(3000);
 
 console.log(`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`);

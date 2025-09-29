@@ -170,9 +170,9 @@
 			/>
 			<p class="mb-2 text-sm text-muted-foreground">{catalogue.description}</p>
 			<p class="font-bold">${catalogue.price.toLocaleString()}</p>
-			<p class="mt-1 text-xs italic">
-				Status: {catalogue.status_publish === 'Y' ? 'Published' : 'Draft'}
-			</p>
+			<Button onclick={()=>goto(`/catalogues/${catalogue!.catalogue_id}/order`)}>
+				Order
+			</Button>
 		{/if}
 		{#if isLoggedIn}
 			<DialogFooter class="flex justify-between">

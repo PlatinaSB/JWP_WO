@@ -246,6 +246,9 @@
 				<p>{selectedCatalogue.description}</p>
 				<p class="font-bold">${selectedCatalogue.price.toLocaleString()}</p>
 				<p>Status: {selectedCatalogue.status_publish === 'Y' ? 'Published' : 'Draft'}</p>
+				<Button onclick={()=>goto(`/catalogues/${selectedCatalogue!.catalogue_id}/order`)}>
+					Order
+				</Button>
 
 				{#if isLoggedIn}
 					<DialogFooter class="flex justify-between">
